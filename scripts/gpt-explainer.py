@@ -1,8 +1,14 @@
 import openai
 import clipboard
 import keyboard
+import configparser
 
-openai.api_key = "YOUR_API_KEY"
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+api_key = config['openai']['api_key']
+
+openai.api_key = api_key
 
 def submit_clipboard():
     prompt = "Consider this statement.\n'" + clipboard.paste() + "'\nExplain what the statement means concisely. Include an example or analogy."
