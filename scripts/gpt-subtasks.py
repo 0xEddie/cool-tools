@@ -11,7 +11,7 @@ config.read('config.ini')
 openai.api_key = config['openai']['api_key']
 
 # Define the GPT-3.5-Turbo prompt
-prompt = "Please break down the task into subtasks for someone with ADHD:"
+prompt_prefix = "Please break down the task into subtasks for someone with ADHD:"
 
 # Define the function to submit the clipboard contents to GPT-3.5-Turbo
 def submit_to_gpt():
@@ -19,12 +19,12 @@ def submit_to_gpt():
     clipboard_text = pyperclip.paste()
 
     # Set up the prompt for GPT-3.5-Turbo
-    prompt_text = prompt + "\n" + clipboard_text
+    prompt = prompt_prefix + "\n" + clipboard_text
 
     # Submit the prompt to GPT-3.5-Turbo
     response = openai.Completion.create(
         engine="davinci-002",
-        prompt=prompt_text,
+        prompt=prompt,
         max_tokens=1024,
         n=1,
         stop=None,
