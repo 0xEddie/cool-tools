@@ -1,11 +1,14 @@
 import pyperclip
 import openai
 import keyboard
-import clipboard
 import json
+import configparser
 
 # Set up OpenAI API credentials
-openai.api_key = "API-KEY"
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+openai.api_key = config['openai']['api_key']
 
 # Define the GPT-3.5-Turbo prompt
 prompt = "Please break down the task into subtasks for someone with ADHD:"
