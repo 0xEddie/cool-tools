@@ -32,13 +32,15 @@ def submit_to_gpt():
     )
 
     # Get the response text from GPT-3.5-Turbo
-    response_text = response.choices[0].text.strip()
+    response = response.choices[0].text.strip()
 
-    # Parse the response JSON
-    response_json = json.loads(response_text)
-
-    # Get the subtasks from the response JSON
+# Do I really need json?
+    # Parse the response JSON, get subtasks
+    response_json = json.loads(response)
     subtasks = response_json["choices"][0]["text"].strip()
+		
+		# Grab response (no json)
+    # subtasks = response.choices[0].text.strip()
 
     # Put the subtasks into the clipboard
     pyperclip.copy(subtasks)
