@@ -1,21 +1,39 @@
 # Fresh Ubuntu Install
 
 ## Setting Up
-1. Get system updates 
-```
-sudo apt update && sudo apt upgrade
-```
 
-2. Set default directory where user-specific configuration files should be stored
+1. Set default directory where user-specific configuration files should be stored
 ```
 export XDG_CONFIG_HOME="$HOME/.config"
 ```
 
+2. Get system updates 
+```
+sudo apt update && sudo apt upgrade
+```
+
 3. Set git user config
 ```
+mkdir ~/.config/git/
+touch ~/.config/git/config
 git config --global user.name "your_name"
 git config --global user.email "your_email@example.com"
 ```
+
+### Connecting to GitHub with SSH
+1. [GitHub fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
+Add GitHub's SSH key fingerprints to SSH known hosts to avoid manually verifying GitHub hosts:
+```
+~./ssh/known_hosts
+```
+```
+github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=
+```
+
+2. [Generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux) (if using hardware key, set up hardware key first using instructions below).
+
+3. [Add a new SSH key to your account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ## Tools
 ### Install some modern tools from [article](https://narasimmantech.com/try-these-8-modern-alternatives-to-common-unix-commands/) or [modern-unix](https://github.com/ibraheemdev/modern-unix)
