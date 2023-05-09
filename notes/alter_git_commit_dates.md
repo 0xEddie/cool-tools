@@ -21,3 +21,13 @@ COMMIT_DATE=$(git log -1 --format=%ad)
 GIT_COMMITTER_DATE="Mon 20 Aug 2018 20:19:19 BST" git commit --amend --no-edit --date "Mon 20 Aug 2018 20:19:19 BST"
 ```
 
+## Bash function to commit staged files, reading $cdate
+```sh
+function gcdater {
+    # check if cdate exists (throw)
+    # check if cdate is greater than most recent commit date (throw)
+    # commit staged files, using rest of args as message
+    GIT_COMMITTER_DATE=$cdate git commit -m "{}" --date $cdate
+}
+```
+
