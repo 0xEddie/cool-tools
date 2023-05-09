@@ -3,7 +3,7 @@
 ## Alter author and commit dates of current staged commit
 ```sh
 cdate="2023-05-14T08:04:27"
-GIT_COMMITER_DATE=$cdate git commit -m "." --date $cdate
+GIT_COMMITTER_DATE=$cdate git commit -m "." --date $cdate
 ```
 
 ## Alter author date of last commit without editing commit message
