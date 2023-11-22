@@ -109,3 +109,24 @@
 }
 ```
 ![image](https://github.com/0xEddie/cool-tools/assets/36518273/954004f6-64a8-4f9c-a051-16ba8965768f)
+
+## 22-Nov-2023
+- Oh my gooooood the difference between GET and POST is how the data is sent in the request, either in the URL (with GET requests) or in the request body (via POST requests).
+- The method attribute specifies how to send form-data to the URL specified in the action attribute. The form-data can be sent via a GET request as URL parameters (with method="get") or via a POST request as data in the request body (with method="post").
+`    <form action='https://register-demo.freecodecamp.org' method="post"></form>`
+- For forms with a required section with `radio` button toggles, you can't just slap a `required` attribute on every radio button (because only one radio can be selected in a related group at any time). However, you can label one radio with `checked` attribute, then optionally add a `legend` caption at the start of the group.
+```html
+<fieldset>
+  <legend>Account type (required)</legend>
+  <label><input type="radio" name="account-type" checked /> Personal</label>
+  <label><input type="radio" name="account-type" /> Business</label>
+</fieldset>
+```
+(using best practices for accessbility, attaching the label to its respective radio button)
+```html
+<fieldset>
+  <legend>Account type (required)</legend>
+  <label for="personal-account"><input id="personal-account" type="radio" name="account-type" checked /> Personal</label>
+  <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business</label>
+</fieldset>
+```
