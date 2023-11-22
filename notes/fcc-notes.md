@@ -47,3 +47,65 @@
 - the `linear-gradient` function actually creates an `image` element, and is usually paired with the `background` property which can accept an image as a value `background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))`
 -  in this red-black gradient, the transition from red to black takes place at the 90% point along the gradient line (so red takes up 90% of the space) `linear-gradient(90deg, red 90%, black);`
   
+## 21-Nov-2023
+- Not sure why this wasn't obvious to me, but complex shapes can be drawn by just placing `div`s inside other `div`s
+![image](https://github.com/0xEddie/cool-tools/assets/36518273/47450bbb-ef5c-4cf9-bfa7-c1a17d092e84)
+
+```html
+<div class="container">
+  <div class="marker red">
+    <div class="cap"></div>
+    <div class="sleeve"></div>
+  </div>
+  <div class="marker green">
+    <div class="cap"></div>
+    <div class="sleeve"></div>
+  </div>
+</div>
+```
+```css
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.cap {
+  width: 60px;
+  height: 25px;
+}
+
+.sleeve {
+  width: 110px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 10px double rgba(0, 0, 0, 0.75);
+}
+
+.cap, .sleeve {
+  display: inline-block;
+}
+
+.red {
+  background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+}
+
+.green {
+  background: linear-gradient(#55680D, #71F53E, #116C31);
+}
+```
+- A subtle pop of emphasis for elements is to use the `box-shadow` CSS function `box-shadow: offsetX offsetY blurRadius spreadRadius color;`
+  - `offsetX` & `offsetY` are measured from the top left corner of an element
+  - `blurRadius` & `spreadRadius` are optional and default to `0`
+```css
+.green {
+  background: linear-gradient(#55680D, #71F53E, #116C31);
+  box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+```
+![image](https://github.com/0xEddie/cool-tools/assets/36518273/954004f6-64a8-4f9c-a051-16ba8965768f)
