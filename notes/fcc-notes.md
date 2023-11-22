@@ -44,4 +44,6 @@
 - Colors can also be expressed in CSS in either hexadecimal or HSL (hue, saturation, lightness
   - `color: #007F00;`
   - `color: hsl(240, 100%, 50%)`
-- the `linear-gradient` function actually creates an `image` element, and is usually paired with the `background` property which can accept an image as a value
+- the `linear-gradient` function actually creates an `image` element, and is usually paired with the `background` property which can accept an image as a value `background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))`
+-  in this red-black gradient, the transition from red to black takes place at the 90% point along the gradient line (so red takes up 90% of the space) `linear-gradient(90deg, red 90%, black);`
+  
