@@ -130,3 +130,17 @@
   <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business</label>
 </fieldset>
 ```
+- During development, it is useful to see the fieldset default borders. However, they visually separate content quite harshly.
+![image](https://github.com/0xEddie/cool-tools/assets/36518273/c3b98484-603f-4be0-a905-f447500286eb)
+```css
+fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid #3b3b4f;
+}
+
+fieldset:last-of-type {
+  border-bottom: none;
+}
+```
+![image](https://github.com/0xEddie/cool-tools/assets/36518273/f59b5398-efc9-4d0c-9794-18bab7970cfc)
