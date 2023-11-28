@@ -144,3 +144,10 @@ fieldset:last-of-type {
 }
 ```
 ![image](https://github.com/0xEddie/cool-tools/assets/36518273/f59b5398-efc9-4d0c-9794-18bab7970cfc)
+
+## 28-Nov-2023
+- You can use attributes of HTML elements as CSS selectors
+```css
+input[type="submit"] {}
+input[name="email"] {}
+```
